@@ -146,7 +146,7 @@ class EasySearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
   final bool cancelableSuggestions;
 
   const EasySearchBar(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.onSearch,
       this.suggestionBuilder,
@@ -183,8 +183,7 @@ class EasySearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
       this.searchTextKeyboardType = TextInputType.text,
       this.searchTextDirection = TextDirection.ltr,
       this.cancelableSuggestions = true})
-      : assert(elevation == null || elevation >= 0.0),
-        super(key: key);
+      : assert(elevation == null || elevation >= 0.0);
 
   @override
   State<EasySearchBar<T>> createState() => _EasySearchBarState<T>();
@@ -411,7 +410,7 @@ class _EasySearchBarState<T> extends State<EasySearchBar<T>>
             : SystemUiOverlayStyle.dark);
 
     return PopScope(
-      onPopInvoked: widget.cancelableSuggestions
+        onPopInvoked: widget.cancelableSuggestions
             ? (bool didPop) {
                 if (_hasOpenedOverlay) {
                   closeOverlay();
@@ -423,7 +422,8 @@ class _EasySearchBarState<T> extends State<EasySearchBar<T>>
             focusNode: FocusNode(),
             onKeyEvent: widget.cancelableSuggestions
                 ? (event) {
-                    if (_hasOpenedOverlay && event.logicalKey == LogicalKeyboardKey.escape) {
+                    if (_hasOpenedOverlay &&
+                        event.logicalKey == LogicalKeyboardKey.escape) {
                       closeOverlay();
                     }
                   }
@@ -472,31 +472,31 @@ class _EasySearchBarState<T> extends State<EasySearchBar<T>>
                                                   Visibility(
                                                       visible:
                                                           scaffold!.hasDrawer,
-                                                      child: IconTheme(
-                                                          data: iconTheme,
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                        .only(
-                                                                    right: 10),
-                                                            child: IconButton(
-                                                                icon: const Icon(
-                                                                    Icons.menu),
-                                                                onPressed: () =>
-                                                                    scaffold
-                                                                        .openDrawer(),
-                                                                tooltip: MaterialLocalizations.of(
-                                                                        context)
-                                                                    .openAppDrawerTooltip),
-                                                          )),
                                                       replacement: Visibility(
                                                           visible: canPop,
+                                                          replacement:
+                                                              Visibility(
+                                                            visible: widget
+                                                                    .leading !=
+                                                                null,
+                                                            replacement:
+                                                                const SizedBox(),
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                      .only(
+                                                                      right:
+                                                                          10),
+                                                              child: widget
+                                                                  .leading,
+                                                            ),
+                                                          ),
                                                           child: IconTheme(
                                                             data: iconTheme,
                                                             child: Padding(
                                                               padding:
                                                                   const EdgeInsets
-                                                                          .only(
+                                                                      .only(
                                                                       right:
                                                                           10),
                                                               child: IconButton(
@@ -510,29 +510,29 @@ class _EasySearchBarState<T> extends State<EasySearchBar<T>>
                                                                           context)
                                                                       .backButtonTooltip),
                                                             ),
-                                                          ),
-                                                          replacement:
-                                                              Visibility(
-                                                            visible: widget
-                                                                    .leading !=
-                                                                null,
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsets
-                                                                          .only(
-                                                                      right:
-                                                                          10),
-                                                              child: widget
-                                                                  .leading,
-                                                            ),
-                                                            replacement:
-                                                                const SizedBox(),
+                                                          )),
+                                                      child: IconTheme(
+                                                          data: iconTheme,
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    right: 10),
+                                                            child: IconButton(
+                                                                icon: const Icon(
+                                                                    Icons.menu),
+                                                                onPressed: () =>
+                                                                    scaffold
+                                                                        .openDrawer(),
+                                                                tooltip: MaterialLocalizations.of(
+                                                                        context)
+                                                                    .openAppDrawerTooltip),
                                                           ))),
                                                   Expanded(
                                                       child: Container(
                                                           margin:
                                                               const EdgeInsets
-                                                                      .only(
+                                                                  .only(
                                                                   left: 10),
                                                           child:
                                                               DefaultTextStyle(

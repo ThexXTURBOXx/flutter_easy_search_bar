@@ -40,7 +40,7 @@ class FilterableList<T> extends StatelessWidget {
   final String Function(T data)? suggestionToString;
 
   const FilterableList(
-      {Key? key,
+      {super.key,
       required this.items,
       required this.onItemTapped,
       this.loader,
@@ -50,22 +50,21 @@ class FilterableList<T> extends StatelessWidget {
       this.suggestionTextStyle = const TextStyle(),
       this.suggestionBackgroundColor,
       this.suggestionToString,
-      this.loading = false})
-      : super(key: key);
+      this.loading = false});
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final ScaffoldState? scaffold = Scaffold.maybeOf(context);
 
-    Color _suggestionBackgroundColor = suggestionBackgroundColor ??
+    Color suggestionBackgroundColor = this.suggestionBackgroundColor ??
         scaffold?.widget.backgroundColor ??
         theme.scaffoldBackgroundColor;
 
     return Material(
         elevation: 5,
         borderRadius: BorderRadius.circular(5),
-        color: _suggestionBackgroundColor,
+        color: suggestionBackgroundColor,
         child: Container(
             constraints: BoxConstraints(maxHeight: maxListHeight),
             child: Visibility(
