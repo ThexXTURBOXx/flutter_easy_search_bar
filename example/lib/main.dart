@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -15,12 +15,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String searchValue = '';
   final List<String> _suggestions = [
-    'Afeganistan',
+    'Afghanistan',
     'Albania',
     'Algeria',
     'Australia',
     'Brazil',
-    'German',
+    'Germany',
     'Madagascar',
     'Mozambique',
     'Portugal',

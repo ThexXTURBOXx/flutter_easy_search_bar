@@ -25,7 +25,7 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-library easy_search_bar;
+library;
 
 import 'dart:async';
 
@@ -410,14 +410,14 @@ class _EasySearchBarState<T> extends State<EasySearchBar<T>>
             : SystemUiOverlayStyle.dark);
 
     return PopScope(
-        onPopInvoked: widget.cancelableSuggestions
-            ? (bool didPop) {
+        onPopInvokedWithResult: widget.cancelableSuggestions
+            ? (bool didPop, Object? result) {
                 if (_hasOpenedOverlay) {
                   closeOverlay();
                   return;
                 }
               }
-            : (bool didPop) {},
+            : (bool didPop, Object? result) {},
         child: KeyboardListener(
             focusNode: FocusNode(),
             onKeyEvent: widget.cancelableSuggestions
