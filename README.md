@@ -1,8 +1,10 @@
 # Easy Search Bar 2
 
-A Flutter plugin to help you handle search inside your application. Can be used inside appBar or inside your application body depending on your necessities.
+A Flutter plugin to help you handle search inside your application. Can be used inside appBar or
+inside your application body depending on your necessities.
 
 ## Preview
+
 ![Default AppBar Preview](https://raw.githubusercontent.com/4inka/flutter_easy_search_bar/main/preview/preview.gif)
 ![Floating AppBar Preview](https://raw.githubusercontent.com/4inka/flutter_easy_search_bar/main/preview/preview2.gif)
 
@@ -12,14 +14,17 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 
 ``` yaml
 dependencies:
-  ...
   easy_search_bar_2: ^1.0.0-alpha.0
 ```
 
 ## Migrating from `easy_search_bar` to `easy_search_bar_2`
 
 Not a lot of changes are necessary, actually:
-- 
+
+- Find and replace all occurrences of `easy_search_bar` -> `easy_search_bar_2`
+- Find and replace all occurrences of `EasySearchBar` -> `EasySearchBar2`
+- If wanted, migrate to the new generic setup (`EasySearchBar2` accepts a generic parameter and you
+  might want to provide the named parameters `suggestionToString`)
 
 ## Basic example with suggestions
 
@@ -87,9 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-**Note:** If you want to create a FloatingAppBar and want the body content to go behind the AppBar you need to set `extendBodyBehindAppBar` Scaffold property to true. And it's also recommended to wrap your Scaffold inside a SafeArea.
+**Note:** If you want to create a FloatingAppBar and want the body content to go behind the AppBar
+you need to set `extendBodyBehindAppBar` Scaffold property to true. And it's also recommended to
+wrap your Scaffold inside a SafeArea.
 
 ## API
+
 | Attribute                 | Type                                          |      Required      | Description                                                                                                            | Default value               |
 |:--------------------------|:----------------------------------------------|:------------------:|:-----------------------------------------------------------------------------------------------------------------------|:----------------------------|
 | title                     | `Widget`                                      | :heavy_check_mark: | The title to be displayed inside AppBar                                                                                |                             |
@@ -129,10 +137,14 @@ class _MyHomePageState extends State<MyHomePage> {
 | cancelableSuggestions     | `bool`                                        |        :x:         | Can be used to allow the user to cancel the suggestions overlay by pressing escape or the back button on mobile        | false                       |
 
 ## Issues & Suggestions
-If you encounter any issue you or want to leave a suggestion you can do it by filling an [issue](https://github.com/ThexXTURBOXx/flutter_easy_search_bar_2/issues).
+
+If you encounter any issue you or want to leave a suggestion you can do it by filling
+an [issue](https://github.com/ThexXTURBOXx/flutter_easy_search_bar_2/issues).
 
 ## Contributions
+
 Here's the list of our awesome contributors:
+
 - [Inka](https://github.com/4inka)
 - [Seiji Tanaka](https://github.com/yameguun)
 - [Victor Gabriel](https://github.com/vctrgbrl)
