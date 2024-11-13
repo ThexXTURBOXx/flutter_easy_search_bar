@@ -1,6 +1,4 @@
-# Easy Search Bar
-
-<a href="https://www.buymeacoffee.com/4inka" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Pizza" style="height: 60px !important;width: 217px !important;" ></a>
+# Easy Search Bar 2
 
 A Flutter plugin to help you handle search inside your application. Can be used inside appBar or inside your application body depending on your necessities.
 
@@ -15,36 +13,13 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ``` yaml
 dependencies:
   ...
-  easy_search_bar: ^2.5.0
+  easy_search_bar_2: ^1.0.0-alpha.0
 ```
 
-## Migrating from 1.x.x to 2.x.x
+## Migrating from `easy_search_bar` to `easy_search_bar_2`
 
-Now instead of using the EasySearchBar widget inside AppBar widget, you can replace the AppBar with it.
-
-This is what you used before:
-
-``` dart
-Scaffold(
-  appBar: AppBar(
-    title: EasySearchBar(
-      title: 'Example',
-      onSearch: (value) => setState(() => searchValue = value)
-    )
-  )
-)
-```
-
-And this is what it is supposed to look like now:
-
-``` dart
-Scaffold(
-  appBar: EasySearchBar(
-    title: Text('Example'),
-    onSearch: (value) => setState(() => searchValue = value)
-  )
-)
-```
+Not a lot of changes are necessary, actually:
+- 
 
 ## Basic example with suggestions
 
@@ -147,20 +122,22 @@ class _MyHomePageState extends State<MyHomePage> {
 | suggestionBuilder         | `Widget Function(String data)`                |        :x:         | Can be used to create custom suggestion item widget                                                                    |                             |
 | onSuggestionTap           | `Function(String data)`                       |        :x:         | Instead of using the default suggestion tap action that fills the textField, you can set your own custom action for it |                             |
 | debounceDuration          | `Duration`                                    |        :x:         | Can be used to set the debounce time for async data fetch                                                              | Duration(milliseconds: 400) |
-| showClearSearchIcon       | `bool`                                    | :x: | Can be used to show search clear textField button                                                              | false |
-| searchClearIconTheme      | `IconThemeData`                                    |        :x:         | Can be used to set custom icon theme for the search clear textField button                                                              |                             |
-| searchTextDirection       | `TextDirection`                                    |        :x:         | Can be used to change text direction                                                              | TextDirection.ltr |
-| putActionsOnRight         | `bool`                                    | :x: | Can be used to determine if the actions button will be placed at right of the appbar                                                              | false |
-| cancelableSuggestions     | `bool`                                   | :x: | Can be used to allow the user to cancel the suggestions overlay by pressing escape or the back button on mobile                                    | false |
+| showClearSearchIcon       | `bool`                                        |        :x:         | Can be used to show search clear textField button                                                                      | false                       |
+| searchClearIconTheme      | `IconThemeData`                               |        :x:         | Can be used to set custom icon theme for the search clear textField button                                             |                             |
+| searchTextDirection       | `TextDirection`                               |        :x:         | Can be used to change text direction                                                                                   | TextDirection.ltr           |
+| putActionsOnRight         | `bool`                                        |        :x:         | Can be used to determine if the actions button will be placed at right of the appbar                                   | false                       |
+| cancelableSuggestions     | `bool`                                        |        :x:         | Can be used to allow the user to cancel the suggestions overlay by pressing escape or the back button on mobile        | false                       |
 
 ## Issues & Suggestions
-If you encounter any issue you or want to leave a suggestion you can do it by filling an [issue](https://github.com/4inka/flutter_easy_search_bar/issues).
+If you encounter any issue you or want to leave a suggestion you can do it by filling an [issue](https://github.com/ThexXTURBOXx/flutter_easy_search_bar_2/issues).
 
 ## Contributions
 Here's the list of our awesome contributors:
+- [Inka](https://github.com/4inka)
 - [Seiji Tanaka](https://github.com/yameguun)
 - [Victor Gabriel](https://github.com/vctrgbrl)
 - [Ivan Terekhin](https://github.com/JEuler)
 - [Dolev Franco](https://github.com/dtkdt100)
+- [Nico Mexis](https://github.com/ThexXTURBOXx)
 
 ### Thank you for the support!

@@ -1,3 +1,12 @@
+# `easy_search_bar_2`
+
+## 1.0.0-alpha.0
+
+* Add generics to the main widgets
+* Project migration
+
+# `easy_search_bar`
+
 ## 2.5.0 - [26-04-2023]
 
 ### Added
