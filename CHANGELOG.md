@@ -1,5 +1,9 @@
 # `easy_search_bar_2`
 
+## 1.0.0
+
+* *No changes, just stable version release*
+
 ## 1.0.0-alpha.0
 
 * Add generics to the main widgets
